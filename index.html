@@ -325,8 +325,15 @@
 
   footer.site {
     border-top: 1px solid var(--line-soft); margin-top: 30px; padding-top: 14px;
-    color: var(--fg-mute); font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+    color: var(--fg-mute); font-size: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
   }
+  .kofi-btn {
+    display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px;
+    border-radius: var(--radius-pill); background: var(--brand); color: #fff;
+    font-weight: 800; font-size: 12px; letter-spacing: 0.3px; text-decoration: none;
+    transition: background .15s;
+  }
+  .kofi-btn:hover { background: var(--brand-2); }
 </style>
 </head>
 <body>
@@ -360,7 +367,7 @@
 
   <footer class="site">
     <span>© 5-stack — A static, no-tracking CS draft game.</span>
-    <span class="tiny">Replace <code>PLAYERS_CSV</code> in the source to use your own dataset.</span>
+    <a class="kofi-btn" href="https://ko-fi.com/slessing" target="_blank" rel="noopener noreferrer">☕ Support me on Ko-fi</a>
   </footer>
 </div>
 
