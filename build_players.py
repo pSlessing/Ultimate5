@@ -102,6 +102,11 @@ def main():
         "Bosnia", "Poland", "Finland", "Slovakia", "Latvia", "Estonia", "Norway",
         "Israel", "Mexico", "Canada", "Kazakhstan", "Turkey", "Serbia",
         "Lithuania", "Bulgaria", "Hungary", "Czechia", "Netherlands",
+        # added: all nationalities present in players.csv
+        "Australia", "Belarus", "Belgium", "Chile", "China", "Germany",
+        "Guatemala", "Indonesia", "Jordan", "Kosovo", "Mongolia", "Montenegro",
+        "New Zealand", "North Macedonia", "Portugal", "Romania", "South Africa",
+        "Spain", "UK", "Uruguay", "Argentina", "Switzerland", "Uzbekistan",
     }
     unknown = sorted({r["nationality"] for r in all_rows} - KNOWN)
     if unknown:

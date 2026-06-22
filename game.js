@@ -38,7 +38,9 @@ const FLAG = {
   'Lithuania':'🇱🇹','Bulgaria':'🇧🇬','Hungary':'🇭🇺','Czechia':'🇨🇿','Netherlands':'🇳🇱',
   'Australia':'🇦🇺','Belarus':'🇧🇾','Chile':'🇨🇱','China':'🇨🇳','Germany':'🇩🇪',
   'Guatemala':'🇬🇹','Kosovo':'🇽🇰','Mongolia':'🇲🇳','North Macedonia':'🇲🇰','Portugal':'🇵🇹',
-  'Romania':'🇷🇴','South Africa':'🇿🇦','Spain':'🇪🇸','UK':'🇬🇧','Uruguay':'🇺🇾'
+  'Romania':'🇷🇴','South Africa':'🇿🇦','Spain':'🇪🇸','UK':'🇬🇧','Uruguay':'🇺🇾',
+  'Argentina':'🇦🇷','Belgium':'🇧🇪','Indonesia':'🇮🇩','Jordan':'🇯🇴',
+  'Montenegro':'🇲🇪','New Zealand':'🇳🇿','Switzerland':'🇨🇭','Uzbekistan':'🇺🇿'
 };
 const flag = (n) => FLAG[n] || '🏳️';
 
@@ -437,7 +439,7 @@ function finishDraftAndSimulate() {
   let alive = true;
   for (const stage of STAGE_SETS[state.difficulty]) {
     const p = sigmoid((avg - stage.difficulty) * k);
-    const passed = alive && (avg >= stage.difficulty);
+    const passed = alive && (Math.random() < p);
     results.push({ ...stage, p, passed: alive ? passed : false, played: alive });
     if (!passed) alive = false;
   }
